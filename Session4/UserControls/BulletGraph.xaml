@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Session4.BulletGraph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Session4"
+             mc:Ignorable="d" 
+             d:DesignHeight="50"
+            
+             d:DesignWidth="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  x:Name="Column1"/>
+            <ColumnDefinition  x:Name="Column2"/>
+            <ColumnDefinition  x:Name="Column3"/>
+            <ColumnDefinition  x:Name="Column4"/>
+            <ColumnDefinition  x:Name="Column5"/>
+            <ColumnDefinition  x:Name="Column6"/>
+            <ColumnDefinition  x:Name="Column7"/>
+        </Grid.ColumnDefinitions>
+
+        <Border 
+            Background="Gray"
+            />
+
+        <Border Grid.Column="1" Background="Red" />
+
+        <Border Grid.Column="2"
+                Background="DarkRed" />
+
+        <Border Grid.Column="3"
+                Background="PaleVioletRed" />
+
+        <Border Grid.Column="4"
+                Background="LightGreen" />
+
+        <Border Grid.Column="5"
+                Background="ForestGreen" />
+
+        <Border Grid.Column="6"
+                Background="DarkGreen" />
+
+    </Grid>
+</UserControl>

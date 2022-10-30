@@ -1,0 +1,638 @@
+﻿<Page x:Class="Session4.DetailedResultsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Session4"
+      mc:Ignorable="d"
+      Height="800"
+      Width="1300"
+      Title="DetailedResultsPage">
+
+    <Grid Grid.IsSharedSizeScope="True"
+          Margin="15 0 15 0"
+          x:Name="PageGrid">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="0.35*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition />
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.4*" />
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0 0 15 0"
+                    Orientation="Horizontal">
+
+            <TextBlock Text="Time period: " />
+
+            <ComboBox x:Name="DateComboBox"
+                      SelectedIndex="0"
+                      SelectionChanged="DateComboBox_SelectionChanged" />
+
+        </StackPanel>
+
+        <Grid 
+            x:Name="HeaderGrid"
+            Grid.Row="1"
+              Grid.Column="1"
+              Grid.ColumnSpan="2"
+              Margin="15 0 15 0"
+              HorizontalAlignment="Right">
+
+            <Grid.Resources>
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush"
+                            Value="Black" />
+                    <Setter Property="BorderThickness"
+                            Value="1" />
+
+                </Style>
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="Column1" />
+                <ColumnDefinition x:Name="MaleColumn" SharedSizeGroup="Column2" />
+                <ColumnDefinition  x:Name="FemaleColumn" SharedSizeGroup="Column3" />
+                <ColumnDefinition x:Name="AgeGroup1Column" SharedSizeGroup="Column4" />
+                <ColumnDefinition x:Name="AgeGroup2Column" SharedSizeGroup="Column5" />
+                <ColumnDefinition x:Name="AgeGroup3Column" SharedSizeGroup="Column6" />
+                <ColumnDefinition x:Name="AgeGroup4Column"  SharedSizeGroup="Column7" />
+                <ColumnDefinition SharedSizeGroup="Column8" />
+                <ColumnDefinition  SharedSizeGroup="Column9" />
+                <ColumnDefinition  SharedSizeGroup="Column10" />
+                <ColumnDefinition SharedSizeGroup="Column11" />
+                <ColumnDefinition SharedSizeGroup="Column12" />
+                <ColumnDefinition SharedSizeGroup="Column13" />
+                <ColumnDefinition SharedSizeGroup="Column14" />
+                <ColumnDefinition SharedSizeGroup="Column15" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.ColumnSpan="15"
+                    Grid.RowSpan="2"
+                    BorderThickness="2" />
+
+            <!--First Row-->
+            <Border Grid.Column="1"
+                    Grid.ColumnSpan="2">
+                <TextBlock  Text="Gender"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Column="3"
+                    Grid.ColumnSpan="4">
+                <TextBlock  Text="Age"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Column="7"
+                    Grid.ColumnSpan="3">
+                <TextBlock  Text="Cabin Type"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Column="10"
+                    Grid.ColumnSpan="5">
+                <TextBlock  Text="Destination Airport"
+                            FontWeight="Bold" />
+            </Border>
+
+
+            <!--Second Row-->
+
+            <Border Grid.Row="1"
+                    Grid.Column="0">
+                <TextBlock  Text="Total"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="1">
+                <TextBlock  Text="Male"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="2">
+                <TextBlock  Text="Female"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="3">
+                <TextBlock  Text="18-24"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="4">
+                <TextBlock  Text="25-39"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="5">
+                <TextBlock  Text="40-59"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="6">
+                <TextBlock  Text="60+"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="7">
+                <TextBlock  Text="Economy"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="8">
+                <TextBlock  Text="Business"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="9">
+                <TextBlock  Text="First"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="10">
+                <TextBlock  Text="AUH"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="11">
+                <TextBlock  Text="BAH"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="12">
+                <TextBlock  Text="DOH"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="13">
+                <TextBlock  Text="RUH"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="14">
+                <TextBlock  Text="CAI"
+                            FontWeight="Bold"
+                            Margin="10 0 10 0" />
+            </Border>
+
+        </Grid>
+
+
+        <TextBlock Grid.Row="2"
+                   Text="Please rate our aircraft flown on AMONIC Airlines"
+                   HorizontalAlignment="Left"
+                   Margin="15 0 0 0"
+                   Grid.ColumnSpan="2" />
+
+        <local:BulletGraph x:Name="Q1Graph"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Stretch"
+                           Grid.Row="2"
+                           Grid.Column="1"
+                           Margin="0 5 15 5"
+                           Width="{Binding ActualWidth,ElementName=HeaderGrid}"
+                           />
+
+        <StackPanel Grid.Row="3">
+
+            <TextBlock  Text="Outstanding"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right"                        
+                        />
+            
+            <TextBlock  Text="Very Good"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+            
+            <TextBlock  Text="Good"
+                        Margin="0 0 -20 0"                       
+                        HorizontalAlignment="Right" />
+            
+            <TextBlock  Text="Adequate"
+                        Margin="0 0 -20 0"                        
+                        HorizontalAlignment="Right" />
+            
+            <TextBlock  Text="Needs Improvement"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+            
+            <TextBlock  Text="Poor"                        
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+            
+            <TextBlock  Text="Don't know"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+
+        </StackPanel>
+
+        <StackPanel x:Name="Q1StackPanel"
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    Orientation="Vertical"
+                    Grid.ColumnSpan="2"
+                    Margin="15 0 15 0"
+                    HorizontalAlignment="Right">
+
+
+
+
+        </StackPanel>
+
+        <TextBlock Grid.Row="4"
+                   Text="How would you rate our flight attendants"
+                   HorizontalAlignment="Left"
+                   Margin="15 0 0 0"
+                   Grid.ColumnSpan="2" />
+
+        <local:BulletGraph x:Name="Q2Graph"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Stretch"
+                           Grid.Row="4"
+                           Grid.Column="1"
+                           Margin="0 5 15 5"
+                           Width="{Binding ActualWidth,ElementName=HeaderGrid}" />
+
+        <StackPanel Grid.Row="5">
+
+            <TextBlock  Text="Outstanding"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Very Good"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Good"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Adequate"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Needs Improvement"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Poor"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Don't know"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+
+        </StackPanel>
+
+        <StackPanel 
+            x:Name="Q2StackPanel"
+            Grid.Column="1"
+                    Grid.Row="5"
+                    Orientation="Vertical"
+                    Grid.ColumnSpan="2"
+                    Margin="15 0 15 0"
+                    HorizontalAlignment="Right">
+
+            
+
+
+        </StackPanel>
+
+
+        <TextBlock Grid.Row="6"
+                   Text="How would you rate our inflight entertainment"
+                   HorizontalAlignment="Left"
+                   Margin="15 0 0 0"
+                   Grid.ColumnSpan="2" />
+
+        <local:BulletGraph x:Name="Q3Graph"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Stretch"
+                           Grid.Row="6"
+                           Grid.Column="1"
+                           Margin="0 5 15 5"
+                           Width="{Binding ActualWidth,ElementName=HeaderGrid}"/>
+
+        <StackPanel Grid.Row="7">
+
+            <TextBlock  Text="Outstanding"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Very Good"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Good"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Adequate"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Needs Improvement"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Poor"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Don't know"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+
+        </StackPanel>
+
+        <StackPanel 
+            x:Name="Q3StackPanel"
+            Grid.Column="1"
+                    Grid.Row="7"
+                    Orientation="Vertical"
+                    Grid.ColumnSpan="2"
+                    Margin="15 0 15 0"
+                    HorizontalAlignment="Right">
+
+            
+
+
+        </StackPanel>
+
+
+        <TextBlock Grid.Row="8"
+                   Text="Please rate the ticket price for the trip you were taking"
+                   HorizontalAlignment="Left"
+                   Margin="15 0 0 0"
+                   Grid.ColumnSpan="2" />
+
+        <local:BulletGraph x:Name="Q4Graph"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Stretch"
+                           Grid.Row="8"
+                           Grid.Column="1"
+                           Margin="0 5 15 5"
+                           Width="{Binding ActualWidth,ElementName=HeaderGrid}"/>
+
+        <StackPanel Grid.Row="9">
+
+            <TextBlock  Text="Outstanding"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Very Good"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Good"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Adequate"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Needs Improvement"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Poor"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+            <TextBlock  Text="Don't know"
+                        Margin="0 0 -20 0"
+                        HorizontalAlignment="Right" />
+
+
+        </StackPanel>
+
+        <StackPanel 
+            x:Name="Q4StackPanel"
+            Grid.Column="1"
+                    Grid.Row="9"
+                    Orientation="Vertical"
+                    Grid.ColumnSpan="2"
+                    Margin="15 0 15 0"
+                    HorizontalAlignment="Right">
+
+            
+
+
+        </StackPanel>
+
+        <Grid Grid.Row="10"
+              Grid.ColumnSpan="2"
+              HorizontalAlignment="Center">
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="0">
+                <Border Background="DarkGreen"
+                        Width="20"
+                        Height="20" />
+                <TextBlock Text="Outstanding"
+                           Margin="10 0 10 0" />
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1">
+                <Border Background="ForestGreen"
+                        Width="20"
+                        Height="20" />
+                <TextBlock Text="Very good"
+                           Margin="10 0 10 0" />
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="2">
+                <Border Background="LightGreen"
+                        Width="20"
+                        Height="20" />
+                <TextBlock Text="Good"
+                           Margin="10 0 10 0" />
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="3">
+                <Border Background="PaleVioletRed"
+                        Width="20"
+                        Height="20" />
+                <TextBlock Text="Adequate"
+                           Margin="10 0 10 0" />
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="4">
+                <Border Background="DarkRed"
+                        Width="20"
+                        Height="20" />
+                <TextBlock Text="Needs improvement"
+                           Margin="10 0 10 0" />
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="5">
+                <Border Background="Red"
+                        Width="20"
+                        Height="20" />
+                <TextBlock Text="Poor"
+                           Margin="10 0 10 0" />
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="6">
+                <Border Background="Gray"
+                        Width="20"
+                        Height="20" />
+                <TextBlock Text="Don't know"
+                           Margin="10 0 10 0" />
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="11"
+              Grid.ColumnSpan="2"
+              HorizontalAlignment="Center">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <CheckBox 
+                x:Name="GenderCheckBox"
+                Content="Gender"
+                      Grid.Column="0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Margin="0 0 50 0"
+                      IsChecked="True"
+                      Checked="GenderCheckBox_Changed"
+                      Unchecked="GenderCheckBox_Changed"
+                      >
+
+                <CheckBox.RenderTransform>
+                    <ScaleTransform ScaleX="1.5"
+                                    ScaleY="1.5" />
+                </CheckBox.RenderTransform>
+
+            </CheckBox>
+
+            <ComboBox 
+                x:Name="GenderComboBox"
+                Grid.Column="1" 
+                SelectedIndex="0"
+                SelectionChanged="GenderComboBox_SelectionChanged"
+                />
+
+
+
+            <CheckBox 
+                x:Name="AgeCheckBox"
+                Content="Age"
+                      Grid.Column="2"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Margin="100 0 50 0"
+                      IsChecked="True"
+                      Checked="AgeCheckBox_Changed"
+                      Unchecked="AgeCheckBox_Changed"
+                      >
+
+                <CheckBox.RenderTransform>
+                    <ScaleTransform ScaleX="1.5"
+                                    ScaleY="1.5" />
+                </CheckBox.RenderTransform>
+
+            </CheckBox>
+
+            <ComboBox 
+                x:Name="AgeComboBox"
+                Grid.Column="3" 
+                SelectedIndex="0"
+                SelectionChanged="AgeComboBox_SelectionChanged"
+                />
+
+        </Grid>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="Session4.DetailedResultsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="DetailedResultsWindow" Height="650" Width="1100">
+    <Grid Grid.IsSharedSizeScope="True">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0 0 15 0"
+                    Orientation="Horizontal"
+                    >
+
+            <TextBlock 
+                Text="Time period: "
+                />
+
+            <ComboBox x:Name="DateComboBox"
+                      SelectedIndex="0"
+                      SelectionChanged="DateComboBox_SelectionChanged" />
+
+        </StackPanel>
+
+       
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Session4Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Surveys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="q1" Type="int" Nullable="false" />
+          <Property Name="q2" Type="int" Nullable="false" />
+          <Property Name="q3" Type="int" Nullable="false" />
+          <Property Name="q4" Type="int" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="100" />
+          <Property Name="cabin_type" Type="varchar" MaxLength="100" />
+          <Property Name="departure" Type="varchar" MaxLength="100" />
+          <Property Name="arrival" Type="varchar" MaxLength="100" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="age" Type="int" />
+        </EntityType>
+        <Association Name="Surveys_FK">
+          <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+          <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Surveys">
+              <PropertyRef Name="q1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Surveys_FK_1">
+          <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+          <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Surveys">
+              <PropertyRef Name="q2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Surveys_FK_2">
+          <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+          <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Surveys">
+              <PropertyRef Name="q3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Surveys_FK_3">
+          <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+          <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Surveys">
+              <PropertyRef Name="q4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Session4ModelContainer">
+          <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="question" EntityType="Self.question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Surveys" EntityType="Self.Surveys" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Surveys_FK" Association="Self.Surveys_FK">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="Surveys" EntitySet="Surveys" />
+          </AssociationSet>
+          <AssociationSet Name="Surveys_FK_1" Association="Self.Surveys_FK_1">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="Surveys" EntitySet="Surveys" />
+          </AssociationSet>
+          <AssociationSet Name="Surveys_FK_2" Association="Self.Surveys_FK_2">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="Surveys" EntitySet="Surveys" />
+          </AssociationSet>
+          <AssociationSet Name="Surveys_FK_3" Association="Self.Surveys_FK_3">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="Surveys" EntitySet="Surveys" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Session4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="value" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Surveys" Relationship="Self.Surveys_FK" FromRole="Answer" ToRole="Surveys" />
+          <NavigationProperty Name="Surveys1" Relationship="Self.Surveys_FK_1" FromRole="Answer" ToRole="Surveys" />
+          <NavigationProperty Name="Surveys2" Relationship="Self.Surveys_FK_2" FromRole="Answer" ToRole="Surveys" />
+          <NavigationProperty Name="Surveys3" Relationship="Self.Surveys_FK_3" FromRole="Answer" ToRole="Surveys" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Surveys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="q1" Type="Int32" Nullable="false" />
+          <Property Name="q2" Type="Int32" Nullable="false" />
+          <Property Name="q3" Type="Int32" Nullable="false" />
+          <Property Name="q4" Type="Int32" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cabin_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="departure" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="arrival" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="age" Type="Int32" />
+          <NavigationProperty Name="Answer" Relationship="Self.Surveys_FK" FromRole="Surveys" ToRole="Answer" />
+          <NavigationProperty Name="Answer1" Relationship="Self.Surveys_FK_1" FromRole="Surveys" ToRole="Answer" />
+          <NavigationProperty Name="Answer2" Relationship="Self.Surveys_FK_2" FromRole="Surveys" ToRole="Answer" />
+          <NavigationProperty Name="Answer3" Relationship="Self.Surveys_FK_3" FromRole="Surveys" ToRole="Answer" />
+        </EntityType>
+        <Association Name="Surveys_FK">
+          <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+          <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Surveys">
+              <PropertyRef Name="q1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Surveys_FK_1">
+          <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+          <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Surveys">
+              <PropertyRef Name="q2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Surveys_FK_2">
+          <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+          <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Surveys">
+              <PropertyRef Name="q3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Surveys_FK_3">
+          <End Role="Answer" Type="Self.Answer" Multiplicity="1" />
+          <End Role="Surveys" Type="Self.Surveys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Answer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Surveys">
+              <PropertyRef Name="q4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Session4Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Answer" EntityType="Self.Answer" />
+          <EntitySet Name="question" EntityType="Self.question" />
+          <EntitySet Name="Surveys" EntityType="Self.Surveys" />
+          <AssociationSet Name="Surveys_FK" Association="Self.Surveys_FK">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="Surveys" EntitySet="Surveys" />
+          </AssociationSet>
+          <AssociationSet Name="Surveys_FK_1" Association="Self.Surveys_FK_1">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="Surveys" EntitySet="Surveys" />
+          </AssociationSet>
+          <AssociationSet Name="Surveys_FK_2" Association="Self.Surveys_FK_2">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="Surveys" EntitySet="Surveys" />
+          </AssociationSet>
+          <AssociationSet Name="Surveys_FK_3" Association="Self.Surveys_FK_3">
+            <End Role="Answer" EntitySet="Answer" />
+            <End Role="Surveys" EntitySet="Surveys" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Session4ModelContainer" CdmEntityContainer="Session4Entities">
+          <EntitySetMapping Name="Answer">
+            <EntityTypeMapping TypeName="Session4Model.Answer">
+              <MappingFragment StoreEntitySet="Answer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="question">
+            <EntityTypeMapping TypeName="Session4Model.question">
+              <MappingFragment StoreEntitySet="question">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Surveys">
+            <EntityTypeMapping TypeName="Session4Model.Surveys">
+              <MappingFragment StoreEntitySet="Surveys">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="q1" ColumnName="q1" />
+                <ScalarProperty Name="q2" ColumnName="q2" />
+                <ScalarProperty Name="q3" ColumnName="q3" />
+                <ScalarProperty Name="q4" ColumnName="q4" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="cabin_type" ColumnName="cabin_type" />
+                <ScalarProperty Name="departure" ColumnName="departure" />
+                <ScalarProperty Name="arrival" ColumnName="arrival" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="age" ColumnName="age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

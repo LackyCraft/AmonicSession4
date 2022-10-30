@@ -1,0 +1,281 @@
+﻿<Page x:Class="Session4.SummaryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Session4"
+      mc:Ignorable="d" 
+      d:DesignHeight="430" d:DesignWidth="1000"
+      Title="SummaryPage">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+       
+
+        <Border Grid.Row="1"
+                Grid.ColumnSpan="3"
+                BorderThickness="0 0 0 3"
+                Margin="10 0 10 0"
+                BorderBrush="{StaticResource MainBlue}" />
+
+        <TextBlock x:Name="FieldworkTextBlock"
+                   Text="Fieldwork: May 2017 - July 2017"
+                   Grid.Row="1"
+                   VerticalAlignment="Bottom"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Left"
+                   Margin="10" />
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Text="{Binding RecordAmount,StringFormat='Sample Size: {0} Adults'}"
+                   VerticalAlignment="Bottom"
+                   Margin="10"
+                   HorizontalAlignment="Right" />
+
+        <Grid Grid.Row="2"
+              Grid.ColumnSpan="3"
+              Margin="10 10 10 150">
+
+            <Grid.Resources>
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="BorderBrush"
+                            Value="Black" />
+                    <Setter Property="BorderThickness"
+                            Value="1" />
+
+                </Style>
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.ColumnSpan="15"
+                    Grid.RowSpan="3"
+                    BorderThickness="2" />
+
+            <!--First Row-->
+            <Border Grid.ColumnSpan="2">
+                <TextBlock  Text="Gender"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Column="2"
+                    Grid.ColumnSpan="4">
+                <TextBlock  Text="Age"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Column="6"
+                    Grid.ColumnSpan="3">
+                <TextBlock  Text="Cabin Type"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Column="9"
+                    Grid.ColumnSpan="5">
+                <TextBlock  Text="Destination Airport"
+                            FontWeight="Bold" />
+            </Border>
+
+
+            <!--Second Row-->
+            <Border Grid.Row="1">
+                <TextBlock  Text="Male"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="1">
+                <TextBlock  Text="Female"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="2">
+                <TextBlock  Text="18-24"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="3">
+                <TextBlock  Text="25-39"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="4">
+                <TextBlock  Text="40-59"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="5">
+                <TextBlock  Text="60+"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="6">
+                <TextBlock  Text="Economy"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="7">
+                <TextBlock  Text="Business"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="8">
+                <TextBlock  Text="First"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="9">
+                <TextBlock  Text="AUH"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="10">
+                <TextBlock  Text="BAH"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="11">
+                <TextBlock  Text="DOH"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="12">
+                <TextBlock  Text="RUH"
+                            FontWeight="Bold" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="13">
+                <TextBlock  Text="CAI"
+                            FontWeight="Bold" />
+            </Border>
+
+
+            <!--Third Row-->
+
+
+
+            <Border Grid.Row="2">
+                <TextBlock  Text="{Binding MaleAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="1">
+                <TextBlock  Text="{Binding FemaleAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="2">
+                <TextBlock  Text="{Binding AgeGroup1Amount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="3">
+                <TextBlock  Text="{Binding AgeGroup2Amount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="4">
+                <TextBlock  Text="{Binding AgeGroup3Amount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="5">
+                <TextBlock  Text="{Binding AgeGroup4Amount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="6">
+                <TextBlock  Text="{Binding EconomyCabinAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="7">
+                <TextBlock  Text="{Binding BusinessCabinAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="8">
+                <TextBlock  Text="{Binding FirstCabinAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="9">
+                <TextBlock  Text="{Binding AuhAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="10">
+                <TextBlock  Text="{Binding BahAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="11">
+                <TextBlock  Text="{Binding DohAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="12">
+                <TextBlock  Text="{Binding RuhAmount}" />
+            </Border>
+
+            <Border Grid.Row="2"
+                    Grid.Column="13">
+                <TextBlock  Text="{Binding CaiAmount}" />
+            </Border>
+
+        </Grid>
+
+
+
+
+    </Grid>
+</Page>
